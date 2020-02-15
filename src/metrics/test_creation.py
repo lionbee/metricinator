@@ -1,6 +1,5 @@
 import unittest
-
-import metrics
+import metrics.creation as metrics
 
 
 class TestMetricFunctions(unittest.TestCase):
