@@ -12,6 +12,8 @@ coverage = "*"
 [packages]
 psutil = "*"
 kafka-python = "*"
+peewee = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.7"

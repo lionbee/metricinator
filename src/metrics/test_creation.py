@@ -42,7 +42,3 @@ class TestMetricFunctions(unittest.TestCase):
             },
             recevied,
         )
-
-
-if __name__ == "__main__":
-    unittest.main()

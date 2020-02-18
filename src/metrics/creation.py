@@ -5,9 +5,9 @@ from typing_extensions import TypedDict
 
 EnrichedMetric = TypedDict(
     "EnrichedMetric",
-    {"hostname": str, "epoch": int, "id": str, "measure": Any},
+    {"hostname": str, "epoch": int, "id": str, "measure": float},
 )
-Metric = Tuple[str, Any]
+Metric = Tuple[str, float]
 Enricher = Callable[[Metric], EnrichedMetric]
 MetricCreator = Callable[[], Metric]
 MetricSupplier = Callable[[], Any]
