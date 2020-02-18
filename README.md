@@ -44,7 +44,11 @@ For the most part I tried to use as much native Python as possible
 - *peewee* Very simple ORM
 - *psycopg2-binary* Libraries to connect to Postgres
 
-## Guides
+## Testing
+
+Unit Test coverage is pretty good, but config has been excluded. To run tests use `pipenv run test` and then `pipenv run report` to see the coverage report.
+
+## Guides used
 
 I needed a bit of guidence on this project to setup pre-commit hooks (on of my personal favorite feature of git). Why fail in CI when you can fail even earlier. THe following guide proved to be quite useful
 
@@ -66,4 +70,4 @@ http://maximilianchrist.com/python/databases/2016/08/13/connect-to-apache-kafka-
 - More metrics. My focus was getting a basic system done for gauges
 - More types of metrics. The system only supports gauges. Added support for timers and counters would be cool.
 - Perhaps redoing everything in Go could be fun.
-
+- CI, none is configured at the moment
