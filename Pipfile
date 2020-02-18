@@ -23,5 +23,8 @@ allow_prereleases = true
 
 [scripts]
 lint = "black src"
-test = "coverage run --source src --omit='**/test*' -m unittest discover src"
+test = "coverage run --source src --omit='**/test*','*_config.py' -m unittest discover src"
 report = "coverage report -m"
+typing = "mypy src"
+consume = "src/consumer.py"
+produce = "src/producer.py"

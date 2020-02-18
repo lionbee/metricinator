@@ -13,6 +13,9 @@ logger = logging.getLogger("producer")
 def consume_metrics(
     consumer=consumer_config.kafka_consumer, db=consumer_config.db
 ):
+    """
+    Consume metrics until interupted
+    """
     try:
         set_database(db)
         for message in consumer:
@@ -21,6 +24,7 @@ def consume_metrics(
             write_gauge(metric)
     except (KeyboardInterrupt, SystemExit):
         logging.info("shutting down")
+    finally:
         db.close()
 
 

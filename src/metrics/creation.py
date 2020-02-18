@@ -14,6 +14,13 @@ MetricSupplier = Callable[[], Any]
 
 
 def create_metric_function(id: str, fn: MetricSupplier) -> MetricCreator:
+    """
+    Create new function that returns a metric id and measure tuple
+
+    - param: id: The unique id of the metric
+    - param: fn: The function that provides the metric measure
+    """
+
     def metric_function():
         return id, fn()
 
@@ -24,6 +31,9 @@ def create_metric_function(id: str, fn: MetricSupplier) -> MetricCreator:
 def create_metric_functions(
     metrics: List[Tuple[str, MetricSupplier]]
 ) -> List[MetricCreator]:
+    """
+    Define multiple metric functions at once
+    """
     return [create_metric_function(id, fn) for id, fn in metrics]
 
 
@@ -31,6 +41,13 @@ def get_enricher(
     hostname: str = platform.node(),
     epoch: Callable[[], int] = lambda: int(time.time() * 1000),
 ) -> Enricher:
+    """
+    Create a function that will enrich a metric with a hostname and epoch
+
+    - param: hostname: Name of the server the function ran on
+    - param: epoch: function to provide epoch in ms
+    """
+
     def enrich(metric: Metric) -> EnrichedMetric:
         return {
             "hostname": hostname,

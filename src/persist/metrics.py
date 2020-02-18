@@ -4,6 +4,11 @@ from metrics.creation import EnrichedMetric
 
 
 def write_gauge(metric: EnrichedMetric) -> None:
+    """
+    Write a metric gauge to storage
+
+    - param: metric: Metric data to persist
+    """
     host, created = db.Host.get_or_create(name=metric["hostname"])
     dbMetric, created = db.Metric.get_or_create(name=metric["id"])
 

@@ -1,3 +1,6 @@
+"""
+ORM for persisting metrics
+"""
 import datetime
 from peewee import (
     Database,

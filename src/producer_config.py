@@ -21,7 +21,7 @@ def _debug_send(*args):
     print(args)
 
 
-_metrics = metric_functions = create_metric_functions(
+_metrics = create_metric_functions(
     [
         ("cpu.percent", psutil.cpu_percent),
         ("disk.usage.percent", lambda: psutil.disk_usage("/").percent),

@@ -10,9 +10,5 @@ kafka_consumer = KafkaConsumer(
 )
 
 db = PostgresqlDatabase(
-    "metricinator",
-    user="metricinator",
-    password="rorys2ehw2mt9zti",
-    host="pg-aiven-test-abadhideout-6761.aivencloud.com",
-    port=26150,
+    "name", user="username", password="password", host="host", port=26150,
 )
